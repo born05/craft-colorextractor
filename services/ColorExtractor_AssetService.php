@@ -34,14 +34,14 @@ class ColorExtractor_AssetService extends BaseApplicationComponent
      * @param  string $colorFieldHandle
      * @return string
      */
-    public function getImageColor(AssetFileModel $asset, $colorFieldHandle = 'imageColor', $forceSave = false)
+    public function getImageColor(AssetFileModel $asset, $forceSave = false)
     {
-        $color = isset($asset[$colorFieldHandle]) ? $asset[$colorFieldHandle] : null;
+        $color = isset($asset->imageColor) ? $asset->imageColor : null;
 
         if (empty($color) || $forceSave) {
             $color = $this->extractColor($asset);
 
-            $asset->getContent()->setAttribute($colorFieldHandle, $color);
+            $asset->getContent()->setAttribute('imageColor', $color);
             $success = craft()->assets->storeFile($asset);
         }
 

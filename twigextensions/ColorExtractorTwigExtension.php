@@ -16,8 +16,8 @@ class ColorExtractorTwigExtension extends \Twig_Extension
         );
     }
 
-    public function colorExtractorFilter($image, $colorFieldHandle = 'imageColor')
+    public function colorExtractorFilter($image)
     {
-        return craft()->colorExtractor_asset->getImageColor($image, $colorFieldHandle);
+        return craft()->colorExtractor_asset->getImageColor($image);
     }
 }

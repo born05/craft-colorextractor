@@ -10,7 +10,7 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function getVersion()
     {
-        return '1.0';
+        return '1.0.0';
     }
 
     public function getDeveloper()
@@ -20,7 +20,22 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function getDeveloperUrl()
     {
-        return 'https://www.born05.com/';
+        return 'http://www.born05.com/';
+    }
+
+    public function getPluginUrl()
+    {
+        return 'https://github.com/born05/craft-colorextractor';
+    }
+
+    public function getDocumentationUrl()
+    {
+        return $this->getPluginUrl() . '/blob/master/README.md';
+    }
+
+    public function getReleaseFeedUrl()
+    {
+        return 'https://raw.githubusercontent.com/born05/craft-colorextractor/master/releases.json';
     }
 
     public function init()

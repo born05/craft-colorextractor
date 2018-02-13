@@ -8,7 +8,7 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
         $asset = $event->params['asset'];
         
         if ($asset->kind === 'image') {
-            craft()->colorExtractor_asset->getImageColor($asset, 'imageColor', true);
+            craft()->colorExtractor_asset->getImageColor($asset, true);
         }
 
         return $event;
@@ -20,7 +20,7 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
             $asset = $event->params['asset'];
             
             if ($asset->kind === 'image') {
-                craft()->colorExtractor_asset->getImageColor($asset, 'imageColor', true);
+                craft()->colorExtractor_asset->getImageColor($asset, true);
             }
         }
 
