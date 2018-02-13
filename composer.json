@@ -1,0 +1,21 @@
+{
+    "name": "born05/craft-colorextractor",
+    "description": "Extract colors from image assets in Craft CMS.",
+    "type": "craft-plugin",
+    "license": "https://github.com/born05/craft-colorextractor/blob/master/LICENSE",
+    "homepage": "https://github.com/born05/craft-colorextractor",
+    "authors": [
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "league/color-extractor": "0.3.*"
+    },
+    "autoload": {
+        "psr-4": { }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0"
+        }
+    }
+}
