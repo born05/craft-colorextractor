@@ -28,7 +28,7 @@ craft()->colorExtractor_asset->getImageColor($assetFileModel);
 
 ## License
 
-Copyright © 2017 [Born05](https://www.born05.com/)
+Copyright © 2018 [Born05](https://www.born05.com/)
 
 See [license](https://github.com/born05/craft-colorextractor/blob/master/LICENSE)
 
