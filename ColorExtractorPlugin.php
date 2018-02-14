@@ -10,7 +10,7 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function getVersion()
     {
-        return '1.0.1';
+        return '1.0.2';
     }
 
     public function getDeveloper()
@@ -51,8 +51,10 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function addTwigExtension()
     {
-        Craft::import('plugins.colorExtractor.twigextensions.ColorExtractorTwigExtension');
+        if (!craft()->isConsole()) {
+            Craft::import('plugins.colorExtractor.twigextensions.ColorExtractorTwigExtension');
 
-        return new ColorExtractorTwigExtension();
+            return new ColorExtractorTwigExtension();
+        }
     }
 }

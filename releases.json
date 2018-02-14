@@ -1,12 +1,20 @@
 [
   {
+    "version": "1.0.2",
+    "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.2.zip",
+    "date": "2018-02-14T10:15:00+00:00",
+    "notes": [
+      "Fixed console usage"
+    ]
+  },
+  {
     "version": "1.0.1",
     "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.1.zip",
     "date": "2018-02-14T08:15:00+00:00",
     "notes": [
       "Added vendor to repo"
     ]
-},
+  },
   {
     "version": "1.0.0",
     "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.0.zip",
