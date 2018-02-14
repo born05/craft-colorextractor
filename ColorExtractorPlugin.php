@@ -51,10 +51,8 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function addTwigExtension()
     {
-        if (!craft()->isConsole()) {
-            Craft::import('plugins.colorExtractor.twigextensions.ColorExtractorTwigExtension');
+        Craft::import('plugins.colorextractor.twigextensions.ColorExtractorTwigExtension');
 
-            return new ColorExtractorTwigExtension();
-        }
+        return new ColorExtractorTwigExtension();
     }
 }
