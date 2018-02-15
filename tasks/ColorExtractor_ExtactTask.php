@@ -50,6 +50,7 @@ class ColorExtractor_ExtactTask extends BaseTask
         $criteria = craft()->elements->getCriteria(ElementType::Asset);
         $criteria->id = $this->getSettings()->assetId;
         $criteria->kind = 'image';
+        $criteria->imageColor = ':empty:';
         $assetModel = $criteria->first();
 
         if (isset($assetModel)) {

@@ -27,13 +27,16 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
         return $event;
     }
 
+    /**
+     * Handles initial install
+     */
     public function processImages()
     {
         $criteria = craft()->elements->getCriteria(ElementType::Asset);
         $criteria->kind = 'image';
         $criteria->limit = null;
         $assetIds = $criteria->ids();
-        
+
         craft()->tasks->createTask('ColorExtractor', '', array(
             'assetIds' => $assetIds
         ));

@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.0.3",
+    "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.3.zip",
+    "date": "2018-02-15T08:30:00+00:00",
+    "notes": [
+      "Tasks should not extract colors twice."
+    ]
+  },
+  {
     "version": "1.0.2",
     "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.2.zip",
     "date": "2018-02-14T10:15:00+00:00",
