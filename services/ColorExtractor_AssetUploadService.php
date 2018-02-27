@@ -7,7 +7,7 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
     {
         $asset = $event->params['asset'];
         
-        if ($asset->kind === 'image') {
+        if ($asset->kind === 'image' && $asset->mimeType !== 'image/svg+xml') {
             craft()->colorExtractor_asset->getImageColor($asset, true);
         }
 
@@ -19,7 +19,7 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
         if ($event->params['isNewAsset']) {
             $asset = $event->params['asset'];
             
-            if ($asset->kind === 'image') {
+            if ($asset->kind === 'image' && $asset->mimeType !== 'image/svg+xml') {
                 craft()->colorExtractor_asset->getImageColor($asset, true);
             }
         }
