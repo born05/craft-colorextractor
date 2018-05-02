@@ -8,7 +8,7 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
         $asset = $event->params['asset'];
         
         if ($asset->kind === 'image' && $asset->mimeType !== 'image/svg+xml') {
-            craft()->colorExtractor_asset->getImageColor($asset, true);
+            $this->createTask($asset->id);
         }
 
         return $event;
@@ -20,7 +20,7 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
             $asset = $event->params['asset'];
             
             if ($asset->kind === 'image' && $asset->mimeType !== 'image/svg+xml') {
-                craft()->colorExtractor_asset->getImageColor($asset, true);
+                $this->createTask($asset->id);
             }
         }
 
@@ -37,8 +37,21 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
         $criteria->limit = null;
         $assetIds = $criteria->ids();
 
-        craft()->tasks->createTask('ColorExtractor', '', array(
-            'assetIds' => $assetIds
-        ));
+        $this->createTask($assetIds);
+    }
+    
+    /**
+     * Create task
+     * @param  string|array $ids
+     */
+    private function createTask($ids)
+    {
+        if (!is_array($assetIds)) {
+            $assetIds = [$assetIds];
+        }
+
+        craft()->tasks->createTask('ColorExtractor', '', [
+            'assetIds' => $assetIds,
+        ]);
     }
 }

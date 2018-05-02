@@ -16,6 +16,11 @@ class ColorExtractor_AssetService extends BaseApplicationComponent
      */
     public function extractColor(AssetFileModel $asset)
     {
+        // No svg support.
+        if ($asset->mimeType === 'image/svg+xml') {
+            return null;
+        }
+
         $palette = Palette::fromFilename($asset->url);
 
         // an extractor is built from a palette
@@ -38,13 +43,15 @@ class ColorExtractor_AssetService extends BaseApplicationComponent
     {
         $color = isset($asset->imageColor) ? $asset->imageColor : null;
 
-        if (empty($color) || $forceSave) {
+        // Only Extract color when forced.
+        if ($forceSave) {
             $color = $this->extractColor($asset);
 
             $asset->getContent()->setAttribute('imageColor', $color);
             $success = craft()->assets->storeFile($asset);
         }
 
-        return $color;
+        // Return color with black fallback.
+        return empty($color) ? '#000000' : $color;
     }
 }

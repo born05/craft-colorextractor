@@ -1,5 +1,14 @@
 [
   {
+    "version": "1.0.5",
+    "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.5.zip",
+    "date": "2018-05-2T15:15:00+00:00",
+    "notes": [
+      "Prevent errors from breaking pageloads.",
+      "#000000 is the default color."
+    ]
+  },
+  {
     "version": "1.0.4",
     "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.4.zip",
     "date": "2018-02-27T11:30:00+00:00",

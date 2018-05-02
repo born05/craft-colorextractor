@@ -10,7 +10,7 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function getVersion()
     {
-        return '1.0.4';
+        return '1.0.5';
     }
 
     public function getDeveloper()
@@ -40,8 +40,8 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function init()
     {
-        craft()->on('assets.onReplaceFile', array(craft()->colorExtractor_assetUpload, 'onReplaceFile'));
-        craft()->on('assets.onSaveAsset', array(craft()->colorExtractor_assetUpload, 'onSaveAsset'));
+        craft()->on('assets.onReplaceFile', [craft()->colorExtractor_assetUpload, 'onReplaceFile']);
+        craft()->on('assets.onSaveAsset', [craft()->colorExtractor_assetUpload, 'onSaveAsset']);
     }
 
     public function onAfterInstall()
