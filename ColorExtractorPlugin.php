@@ -10,6 +10,11 @@ class ColorExtractorPlugin extends BasePlugin
 
     public function getVersion()
     {
+        return '1.0.6';
+    }
+
+    public function getSchemaVersion()
+    {
         return '1.0.5';
     }
 

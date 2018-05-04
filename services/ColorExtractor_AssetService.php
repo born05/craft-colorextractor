@@ -45,7 +45,12 @@ class ColorExtractor_AssetService extends BaseApplicationComponent
 
         // Only Extract color when forced.
         if ($forceSave) {
-            $color = $this->extractColor($asset);
+            try {
+                $color = $this->extractColor($asset);
+            } catch (Exception $e) {
+                ColorExtractorPlugin::log($e->getMessage(), LogLevel::Error, true);
+                return false;
+            }
 
             $asset->getContent()->setAttribute('imageColor', $color);
             $success = craft()->assets->storeFile($asset);

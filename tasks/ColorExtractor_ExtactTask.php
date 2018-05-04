@@ -54,11 +54,7 @@ class ColorExtractor_ExtactTask extends BaseTask
         $assetModel = $criteria->first();
 
         if (isset($assetModel)) {
-            try {
-                craft()->colorExtractor_asset->getImageColor($assetModel, true);
-            } catch (Exception $e) {
-                return false;
-            }
+            craft()->colorExtractor_asset->getImageColor($assetModel, true);
         }
 
         return true;

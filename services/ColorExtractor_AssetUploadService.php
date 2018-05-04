@@ -34,6 +34,7 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
     {
         $criteria = craft()->elements->getCriteria(ElementType::Asset);
         $criteria->kind = 'image';
+        $criteria->imageColor = ':empty:';
         $criteria->limit = null;
         $assetIds = $criteria->ids();
 
@@ -42,9 +43,9 @@ class ColorExtractor_AssetUploadService extends BaseApplicationComponent
     
     /**
      * Create task
-     * @param  string|array $ids
+     * @param  string|array $assetIds
      */
-    private function createTask($ids)
+    private function createTask($assetIds)
     {
         if (!is_array($assetIds)) {
             $assetIds = [$assetIds];
