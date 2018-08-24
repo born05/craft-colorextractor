@@ -9,8 +9,8 @@ By using the `imageColor` field on each asset, it doesn't require extra database
 ## Requirements
 
 - A field named `imageColor` on all assets of kind image (can be color or plaintext)
-- Craft 2.6.x (we test on the latest release of Craft 2)
-- PHP 7.x at least
+- Craft 3 (we test on the latest release of Craft 3)
+- PHP 7.1 at least
 
 ## Example usage
 
@@ -20,15 +20,13 @@ Use the `colorExtractor` twig filter to retrieve the image's color from template
 <div style="background-color: {{ entry.images[0]|colorExtractor }};"></div>
 ```
 
-From php:
+From command:
 
 ```php
-craft()->colorExtractor_asset->getImageColor($assetFileModel);
+craft color-extractor/default
 ```
 
 ## License
-
-Copyright © 2018 [Born05](https://www.born05.com/)
 
 See [license](https://github.com/born05/craft-colorextractor/blob/master/LICENSE)
 

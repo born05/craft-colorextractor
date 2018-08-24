@@ -2,20 +2,44 @@
     "name": "born05/craft-colorextractor",
     "description": "Extract colors from image assets in Craft CMS.",
     "type": "craft-plugin",
-    "license": "https://github.com/born05/craft-colorextractor/blob/master/LICENSE",
-    "homepage": "https://github.com/born05/craft-colorextractor",
+    "version": "2.0.0-beta-1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "color extractor"
+    ],
+    "support": {
+        "docs": "https://github.com/born05/craft-colorextractor/color-extractor/blob/master/README.md",
+        "issues": "https://github.com/born05/craft-colorextractor/color-extractor/issues"
+    },
+    "license": "MIT",
     "authors": [
+        {
+            "name": "Born05",
+            "homepage": "https://www.born05.com/"
+        }
     ],
     "require": {
-        "composer/installers": "~1.0",
-        "league/color-extractor": "0.3.*"
+        "craftcms/cms": "^3.0.0-RC1",
+        "league/color-extractor": "^0.3.2"
     },
     "autoload": {
-        "psr-4": { }
-    },
-    "config": {
-        "platform": {
-            "php": "7.0"
+        "psr-4": {
+          "born05\\colorextractor\\": "src/"
         }
+    },
+    "extra": {
+        "name": "Color Extractor",
+        "handle": "color-extractor",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/born05/craft-colorextractor/color-extractor/master/CHANGELOG.md",
+        "components": {
+            "asset": "born05\\colorextractor\\services\\Asset",
+            "assetUpload": "born05\\colorextractor\\services\\AssetUpload"
+        },
+        "class": "born05\\colorextractor\\ColorExtractor"
     }
 }

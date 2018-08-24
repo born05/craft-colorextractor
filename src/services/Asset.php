@@ -1,20 +1,23 @@
 <?php
-namespace Craft;
 
-require_once craft()->path->getPluginsPath() . 'colorextractor/vendor/autoload.php';
+namespace born05\colorextractor\services;
 
 use League\ColorExtractor\Color;
 use League\ColorExtractor\ColorExtractor;
 use League\ColorExtractor\Palette;
 
-class ColorExtractor_AssetService extends BaseApplicationComponent
+use Craft;
+use craft\base\Component;
+use craft\elements\Asset as AssetElement;
+
+class Asset extends Component
 {
     /**
      * Extract colors from asset image.
      * @param  AssetFileModel $asset
      * @return string
      */
-    public function extractColor(AssetFileModel $asset)
+    public function extractColor(AssetElement $asset)
     {
         // No svg support.
         if ($asset->mimeType === 'image/svg+xml') {
@@ -39,7 +42,7 @@ class ColorExtractor_AssetService extends BaseApplicationComponent
      * @param  string $colorFieldHandle
      * @return string
      */
-    public function getImageColor(AssetFileModel $asset, $forceSave = false)
+    public function getImageColor(AssetElement $asset, $forceSave = false)
     {
         $color = isset($asset->imageColor) ? $asset->imageColor : null;
 
@@ -48,12 +51,16 @@ class ColorExtractor_AssetService extends BaseApplicationComponent
             try {
                 $color = $this->extractColor($asset);
             } catch (Exception $e) {
-                ColorExtractorPlugin::log($e->getMessage(), LogLevel::Error, true);
+                Craft::error(
+                    $e->getMessage(),
+                    __METHOD__
+                );
+                
                 return false;
             }
 
-            $asset->getContent()->setAttribute('imageColor', $color);
-            $success = craft()->assets->storeFile($asset);
+            $asset->setFieldValue('imageColor', $color);
+            Craft::$app->getElements()->saveElement($asset);
         }
 
         // Return color with black fallback.

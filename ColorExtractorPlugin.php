@@ -49,15 +49,15 @@ class ColorExtractorPlugin extends BasePlugin
         craft()->on('assets.onSaveAsset', [craft()->colorExtractor_assetUpload, 'onSaveAsset']);
     }
 
-    public function onAfterInstall()
-    {
-        craft()->colorExtractor_assetUpload->processImages();
-    }
+    // public function onAfterInstall()
+    // {
+    //     craft()->colorExtractor_assetUpload->processImages();
+    // }
 
-    public function addTwigExtension()
-    {
-        Craft::import('plugins.colorextractor.twigextensions.ColorExtractorTwigExtension');
-
-        return new ColorExtractorTwigExtension();
-    }
+    // public function addTwigExtension()
+    // {
+    //     Craft::import('plugins.colorextractor.twigextensions.ColorExtractorTwigExtension');
+    // 
+    //     return new ColorExtractorTwigExtension();
+    // }
 }
