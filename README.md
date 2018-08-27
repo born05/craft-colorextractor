@@ -1,6 +1,6 @@
 # Color Extractor
 
-Extract colors from image assets in Craft CMS.
+Extract colors from image assets in Craft 2.
 
 ## Inner working
 
@@ -30,7 +30,7 @@ craft()->colorExtractor_asset->getImageColor($assetFileModel);
 
 Copyright © 2018 [Born05](https://www.born05.com/)
 
-See [license](https://github.com/born05/craft-colorextractor/blob/master/LICENSE)
+See [license](https://github.com/born05/craft-colorextractor/blob/craft-2/LICENSE)
 
 ## Credits
 

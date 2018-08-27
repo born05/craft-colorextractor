@@ -2,7 +2,7 @@
     "name": "born05/craft-colorextractor",
     "description": "Extract colors from image assets in Craft CMS.",
     "type": "craft-plugin",
-    "license": "https://github.com/born05/craft-colorextractor/blob/master/LICENSE",
+    "license": "https://github.com/born05/craft-colorextractor/blob/craft-2/LICENSE",
     "homepage": "https://github.com/born05/craft-colorextractor",
     "authors": [
     ],
