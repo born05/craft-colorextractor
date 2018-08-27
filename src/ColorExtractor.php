@@ -33,7 +33,7 @@ class ColorExtractor extends Plugin
      *
      * @var string
      */
-    public $schemaVersion = '2.0.0-beta-1';
+    public $schemaVersion = '2.0.0';
 
     public function init()
     {
