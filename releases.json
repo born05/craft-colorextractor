@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.0.7",
+    "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.7.zip",
+    "date": "2018-08-27T09:00:00+00:00",
+    "notes": [
+      "Moved to the Craft 2 branch"
+    ]
+  },
+  {
     "version": "1.0.6",
     "downloadUrl": "https://github.com/born05/craft-colorextractor/archive/1.0.6.zip",
     "date": "2018-05-4T11:00:00+00:00",

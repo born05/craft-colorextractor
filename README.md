@@ -1,6 +1,7 @@
 # Color Extractor
 
-Extract colors from image assets in Craft CMS.
+Extract colors from image assets in Craft 3.
+The Craft 2 plugin is moved to [another branch](https://github.com/born05/craft-colorextractor/tree/craft-2).
 
 ## Inner working
 
