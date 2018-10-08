@@ -7,6 +7,7 @@ use born05\colorextractor\ColorExtractor;
 use Craft;
 use craft\elements\Asset;
 use craft\queue\BaseJob;
+use yii\base\Exception;
 
 /**
  * Color Extractor task
@@ -24,12 +25,16 @@ class ColorExtractorTask extends BaseJob
 
     public function execute($queue)
     {
-      $assets = Asset::find()
-        ->id($this->assetIds)
-        ->kind(Asset::KIND_IMAGE)
-        ->imageColor(':empty:')
-        ->limit(null)
-        ->all();
+        if (!Asset::find()->kind(Asset::KIND_IMAGE)->canGetProperty('imageColor')) {
+            throw new Exception('Assets of kind image are missing an "imageColor" field.');
+        }
+
+        $assets = Asset::find()
+          ->id($this->assetIds)
+          ->kind(Asset::KIND_IMAGE)
+          ->imageColor(':empty:')
+          ->limit(null)
+          ->all();
 
         $totalSteps = count($assets);
         $step = 0;

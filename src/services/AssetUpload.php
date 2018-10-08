@@ -29,13 +29,15 @@ class AssetUpload extends Component
      */
     public function processImages()
     {
-        $assetIds = Asset::find()
-          ->kind(Asset::KIND_IMAGE)
-          ->imageColor(':empty:')
-          ->limit(null)
-          ->ids();
+        if (Asset::find()->kind(Asset::KIND_IMAGE)->canGetProperty('imageColor')) {
+            $assetIds = Asset::find()
+              ->kind(Asset::KIND_IMAGE)
+              ->imageColor(':empty:')
+              ->limit(null)
+              ->ids();
 
-        $this->createTask($assetIds);
+            $this->createTask($assetIds);
+        }
     }
     
     /**

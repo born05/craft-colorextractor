@@ -47,7 +47,7 @@ class Asset extends Component
         $color = isset($asset->imageColor) ? $asset->imageColor : null;
 
         // Only Extract color when forced.
-        if ($forceSave) {
+        if ($forceSave && $asset->canGetProperty('imageColor')) {
             try {
                 $color = $this->extractColor($asset);
             } catch (Exception $e) {
