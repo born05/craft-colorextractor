@@ -12,14 +12,14 @@ class AssetUpload extends Component
 {
     public function onReplaceFile(Asset $asset)
     {
-        if ($asset->kind === 'image' && $asset->mimeType !== 'image/svg+xml') {
+        if ($asset->kind === Asset::KIND_IMAGE && $asset->mimeType !== 'image/svg+xml') {
             $this->createTask($asset->id);
         }
     }
 
     public function onSaveAsset(Asset $asset)
     {
-        if ($asset->kind === 'image' && $asset->mimeType !== 'image/svg+xml') {
+        if ($asset->kind === Asset::KIND_IMAGE && $asset->mimeType !== 'image/svg+xml') {
             $this->createTask($asset->id);
         }
     }

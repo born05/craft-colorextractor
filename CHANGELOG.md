@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.0-beta.4 - 2018-11-05
+### Fixed
+- Fixed a major bug causing the queue to build up.
+
 ## 2.0.0-beta.3 - 2018-10-08
 ### Fixed
 - Fixed errors thrown when imageColor field is missing on assets.

@@ -12,7 +12,7 @@ use craft\elements\Asset;
 use craft\services\Assets;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
-use craft\events\GetAssetUrlEvent;
+use craft\events\ModelEvent;
 use craft\events\ReplaceAssetEvent;
 use craft\console\Application as ConsoleApplication;
 
@@ -71,12 +71,14 @@ class ColorExtractor extends Plugin
         );
 
         Event::on(
-            Assets::class,
-            Assets::EVENT_GET_ASSET_URL,
-            function (GetAssetUrlEvent $event) {
-                /** @var Asset $element */
-                $asset = $event->asset;
-                $this->assetUpload->onSaveAsset($asset);
+            Asset::class,
+            Asset::EVENT_AFTER_SAVE,
+            function (ModelEvent $event) {
+                if ($event->isNew) {
+                    /** @var Asset $element */
+                    $asset = $event->sender;
+                    $this->assetUpload->onSaveAsset($asset);
+                }
             }
         );
     }
