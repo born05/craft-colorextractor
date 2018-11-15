@@ -2,7 +2,7 @@
     "name": "born05/craft-colorextractor",
     "description": "Extract colors from image assets in Craft CMS. Requires a field named `imageColor` on all assets of kind image (can be color or plaintext)",
     "type": "craft-plugin",
-    "version": "2.0.0-beta.4",
+    "version": "2.0.0-beta.5",
     "keywords": [
         "craft",
         "cms",
@@ -38,7 +38,8 @@
         "changelogUrl": "https://raw.githubusercontent.com/born05/craft-colorextractor/master/CHANGELOG.md",
         "components": {
             "asset": "born05\\colorextractor\\services\\Asset",
-            "assetUpload": "born05\\colorextractor\\services\\AssetUpload"
+            "assetUpload": "born05\\colorextractor\\services\\AssetUpload",
+            "color": "born05\\colorextractor\\services\\Color"
         },
         "class": "born05\\colorextractor\\ColorExtractor"
     }

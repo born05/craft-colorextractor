@@ -24,6 +24,7 @@ class ColorExtractorTwigExtension extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFilter('colorExtractor', [$this, 'colorExtractorFilter']),
+            new \Twig_SimpleFilter('colorIsDark', [$this, 'colorIsDarkFilter']),
         ];
     }
 
@@ -35,5 +36,16 @@ class ColorExtractorTwigExtension extends \Twig_Extension
     public function colorExtractorFilter($asset)
     {
         return ColorExtractor::$plugin->asset->getImageColor($asset);
+    }
+
+    /**
+     * @param null $asset
+     *
+     * @return boolean
+     */
+    public function colorIsDarkFilter($asset)
+    {
+        $color = ColorExtractor::$plugin->asset->getImageColor($asset);
+        return ColorExtractor::$plugin->color->isDark($color);
     }
 }

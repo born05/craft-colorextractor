@@ -55,12 +55,12 @@ class Asset extends Component
                     $e->getMessage(),
                     __METHOD__
                 );
-                
-                return false;
             }
 
-            $asset->setFieldValue('imageColor', $color);
-            Craft::$app->getElements()->saveElement($asset);
+            if (!empty($color)) {
+                $asset->setFieldValue('imageColor', $color);
+                Craft::$app->getElements()->saveElement($asset);
+            }
         }
 
         // Return color with black fallback.
