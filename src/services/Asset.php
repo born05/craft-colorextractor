@@ -9,6 +9,7 @@ use League\ColorExtractor\Palette;
 use Craft;
 use craft\base\Component;
 use craft\elements\Asset as AssetElement;
+use yii\base\Exception;
 
 class Asset extends Component
 {
@@ -24,6 +25,10 @@ class Asset extends Component
             return null;
         }
 
+        // The volume needs urls
+        if (empty($asset->url)) {
+            throw new Exception('The volume has no urls.');
+        }
         $palette = Palette::fromFilename($asset->url);
 
         // an extractor is built from a palette
