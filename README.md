@@ -29,7 +29,7 @@ craft color-extractor/default
 
 ## License
 
-See [license](https://github.com/born05/craft-colorextractor/blob/master/LICENSE)
+See [license](https://github.com/born05/craft-colorextractor/blob/master/LICENSE.md)
 
 ## Credits
 
