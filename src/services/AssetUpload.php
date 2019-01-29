@@ -31,10 +31,10 @@ class AssetUpload extends Component
     {
         if (Asset::find()->kind(Asset::KIND_IMAGE)->canGetProperty('imageColor')) {
             $assetIds = Asset::find()
-              ->kind(Asset::KIND_IMAGE)
-              ->imageColor(':empty:')
-              ->limit(null)
-              ->ids();
+                ->kind(Asset::KIND_IMAGE)
+                ->imageColor(':empty:')
+                ->limit(null)
+                ->ids();
 
             $this->createTask($assetIds);
         }
@@ -42,7 +42,8 @@ class AssetUpload extends Component
     
     /**
      * Create task
-     * @param  string|array $assetIds
+     * 
+     * @param string|array $assetIds
      */
     private function createTask($assetIds)
     {
@@ -52,8 +53,8 @@ class AssetUpload extends Component
         
         $queue = Craft::$app->getQueue();
 
-        $jobId = $queue->push(new ColorExtractorTaskJob([
-            'assetIds' => $assetIds,
-        ]));
+        $jobId = $queue->push(
+            new ColorExtractorTaskJob([ 'assetIds' => $assetIds ])
+        );
     }
 }
