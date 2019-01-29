@@ -20,8 +20,8 @@ class Asset extends Component
      */
     public function extractColor(AssetElement $asset)
     {
-        // No svg support.
-        if ($asset->mimeType === 'image/svg+xml') {
+        // Only image support, but no svg.
+        if ($asset->kind !== AssetElement::KIND_IMAGE || $asset->mimeType === 'image/svg+xml') {
             return null;
         }
 
