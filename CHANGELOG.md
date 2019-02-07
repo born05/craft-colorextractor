@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.0 - 2019-01-15
+
+### Fixed
+- Stable release for Craft 3 and 3.1
+- Handles corrupt images where no colors are found.
+
 ## 2.0.0-beta.6 - 2018-11-27
 ### Fixed
 - Check for urls. Volumes need urls for the plugin to process the image.
