@@ -31,6 +31,11 @@ class Asset extends Component
         }
         $palette = Palette::fromFilename($asset->url);
 
+        // No colors found.
+        if ($palette->count() < 1) {
+            return null;
+        }
+
         // an extractor is built from a palette
         $extractor = new ColorExtractor($palette);
 
