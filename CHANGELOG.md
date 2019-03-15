@@ -4,8 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 2.0.0 - 2019-01-15
+## 2.0.1 - 2019-03-15
+### Fixed
+- Prevent crashing when asset files are missing.
 
+## 2.0.0 - 2019-01-15
 ### Fixed
 - Stable release for Craft 3 and 3.1
 - Handles corrupt images where no colors are found.

@@ -10,7 +10,8 @@ use craft\elements\Asset as AssetElement;
 
 class Color extends Component
 {
-    public function isDark(string $color) {
+    public function isDark(string $color)
+    {
         $intColor = LeagueColor::fromHexToInt($color);
         $rgbColor = LeagueColor::fromIntToRgb($intColor);
 

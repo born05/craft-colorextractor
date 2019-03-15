@@ -30,11 +30,11 @@ class ColorExtractorTask extends BaseJob
         }
 
         $assets = Asset::find()
-          ->id($this->assetIds)
-          ->kind(Asset::KIND_IMAGE)
-          ->imageColor(':empty:')
-          ->limit(null)
-          ->all();
+            ->id($this->assetIds)
+            ->kind(Asset::KIND_IMAGE)
+            ->imageColor(':empty:')
+            ->limit(null)
+            ->all();
 
         $totalSteps = count($assets);
         $step = 0;
