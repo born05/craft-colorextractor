@@ -30,10 +30,10 @@ class Asset extends Component
             throw new Exception('The volume has no urls.');
         }
 
-        if (empty($asset->getVolume()->fileExists($asset->getPath()))) {
+        if (!$asset->getVolume()->fileExists($asset->getPath())) {
             throw new Exception('File "' . $asset->getPath() . '" does no exist on volume.');
         }
-        
+
         $palette = Palette::fromFilename($asset->url);
 
         // No colors found.
@@ -53,7 +53,7 @@ class Asset extends Component
 
     /**
      * Get image color
-     * 
+     *
      * @param  AssetFileModel $asset
      * @param  bool $forceSave
      * @return string
@@ -63,7 +63,7 @@ class Asset extends Component
         $color = isset($asset->imageColor) ? $asset->imageColor : null;
 
         // Only Extract color when forced.
-        if ($forceSave && $asset->canGetProperty('imageColor')) {
+        if ($forceSave && isset($asset->imageColor)) {
             try {
                 $color = $this->extractColor($asset);
             } catch (Exception $e) {
