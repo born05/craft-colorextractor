@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.3 - 2019-03-20
+### Changed
+- Let the volume handle asset content retrieval.
+
 ## 2.0.2 - 2019-03-18
 ### Fixed
 - Missing image check. Empty image files can still cause errors.

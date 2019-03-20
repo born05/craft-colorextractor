@@ -25,16 +25,13 @@ class Asset extends Component
             return null;
         }
 
-        // The volume needs urls
-        if (empty($asset->url)) {
-            throw new Exception('The volume has no urls.');
-        }
-
         if (!$asset->getVolume()->fileExists($asset->getPath())) {
             throw new Exception('File "' . $asset->getPath() . '" does no exist on volume.');
         }
 
-        $palette = Palette::fromFilename($asset->url);
+        $image = imagecreatefromstring($asset->getContents());
+        $palette = Palette::fromGD($image);
+        imagedestroy($image);
 
         // No colors found.
         if ($palette->count() < 1) {
