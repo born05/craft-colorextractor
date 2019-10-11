@@ -26,7 +26,8 @@ class ColorExtractorTask extends BaseJob
     public function execute($queue)
     {
         if (!Asset::find()->kind(Asset::KIND_IMAGE)->canGetProperty('imageColor')) {
-            throw new Exception('Assets of kind image are missing an "imageColor" field.');
+            Craft::warning('Assets of kind image are missing an "imageColor" field.', 'color-extractor');
+            return;
         }
 
         $assets = Asset::find()

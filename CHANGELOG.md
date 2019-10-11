@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.5 - 2019-10-11
+### Changed
+- Log warnings when `ColorExtractorTask` fails, instead of throwing exceptions.
+
 ## 2.0.4 - 2019-10-11
 ### Fixed
 - Deprecated twig extensions.
