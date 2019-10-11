@@ -5,8 +5,10 @@ namespace born05\colorextractor\twigextensions;
 use born05\colorextractor\ColorExtractor;
 
 use Craft;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
-class ColorExtractorTwigExtension extends \Twig_Extension
+class ColorExtractorTwigExtension extends AbstractExtension
 {
     public function getName()
     {
@@ -23,8 +25,8 @@ class ColorExtractorTwigExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('colorExtractor', [$this, 'colorExtractorFilter']),
-            new \Twig_SimpleFilter('colorIsDark', [$this, 'colorIsDarkFilter']),
+            new TwigFilter('colorExtractor', [$this, 'colorExtractorFilter']),
+            new TwigFilter('colorIsDark', [$this, 'colorIsDarkFilter']),
         ];
     }
 
