@@ -29,6 +29,8 @@ craft color-extractor/default
 
 ## License
 
+Copyright © [Born05](https://www.born05.com/)
+
 See [license](https://github.com/born05/craft-colorextractor/blob/master/LICENSE.md)
 
 ## Credits
