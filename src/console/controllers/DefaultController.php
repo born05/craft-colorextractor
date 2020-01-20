@@ -9,12 +9,13 @@ use yii\console\Controller;
 use yii\helpers\Console;
 
 /**
- * Default Command
- * 
- * ./craft color-extractor/default
+ * Extracts colors from images.
  */
 class DefaultController extends Controller
 {
+    /**
+     * Exteracts colors from all images where missing.
+     */
     public function actionIndex()
     {
         echo "Extract image colors.\n";
