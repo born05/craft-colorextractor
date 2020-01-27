@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.6 - 2020-01-27
+### Changed
+- Let extract task throw exceptions when the extracting itself fails.
+
 ## 2.0.5 - 2019-10-11
 ### Changed
 - Log warnings when `ColorExtractorTask` fails, instead of throwing exceptions.
