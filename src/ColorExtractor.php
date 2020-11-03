@@ -41,6 +41,8 @@ class ColorExtractor extends Plugin
         parent::init();
         self::$plugin = $this;
 
+        if (!$this->isInstalled) return;
+
         // Add in our Twig extensions
         Craft::$app->view->registerTwigExtension(new ColorExtractorTwigExtension());
 
