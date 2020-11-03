@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.6.1 - 2020-11-03
+### Fixed
+- Fixed composer.json for composer 2
+
 ## 2.0.6 - 2020-01-27
 ### Changed
 - Let extract task throw exceptions when the extracting itself fails.
