@@ -23,19 +23,17 @@ class ColorExtractor extends Plugin
 {
     /**
      * Static property that is an instance of this plugin class so that it can be accessed via
-     * ColorExtractor::$plugin
+     * Plugin::$plugin
      *
-     * @var ColorExtractor
+     * @var Plugin
      */
-    public static $plugin;
+    public static ColorExtractor $plugin;
+
+    public string $schemaVersion = '2.0.0';
 
     /**
-     * To execute your plugin’s migrations, you’ll need to increase its schema version.
-     *
-     * @var string
+     * @inheritdoc
      */
-    public $schemaVersion = '2.0.0';
-
     public function init()
     {
         parent::init();
