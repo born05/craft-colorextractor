@@ -2,9 +2,7 @@
 
 namespace born05\colorextractor\services;
 
-use League\ColorExtractor\Color;
-use League\ColorExtractor\ColorExtractor;
-use League\ColorExtractor\Palette;
+use ColorThief\ColorThief;
 
 use Craft;
 use craft\base\Component;
@@ -25,27 +23,11 @@ class Asset extends Component
             return null;
         }
 
-        if (!$asset->getVolume()->fileExists($asset->getPath())) {
+        if (!$asset->getFs()->fileExists($asset->getPath())) {
             throw new Exception('File "' . $asset->getPath() . '" does no exist on volume.');
         }
 
-        $image = imagecreatefromstring($asset->getContents());
-        $palette = Palette::fromGD($image);
-        imagedestroy($image);
-
-        // No colors found.
-        if ($palette->count() < 1) {
-            return null;
-        }
-
-        // an extractor is built from a palette
-        $extractor = new ColorExtractor($palette);
-
-        // it defines an extract method which return the most “representative” colors
-        $colors = $extractor->extract(1);
-
-        // colors are represented by integers
-        return Color::fromIntToHex($colors[0]);
+        return ColorThief::getColor($asset->getContents(), 10, null, 'hex');
     }
 
     /**
