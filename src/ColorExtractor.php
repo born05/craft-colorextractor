@@ -2,9 +2,6 @@
 
 namespace born05\colorextractor;
 
-use born05\colorextractor\services\Asset as AssetService;
-use born05\colorextractor\services\AssetUpload as AssetUploadService;
-use born05\colorextractor\services\Color as ColorService;
 use born05\colorextractor\twigextensions\ColorExtractorTwigExtension;
 
 use Craft;
