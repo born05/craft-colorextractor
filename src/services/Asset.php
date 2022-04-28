@@ -23,7 +23,7 @@ class Asset extends Component
             return null;
         }
 
-        if (!$asset->getFs()->fileExists($asset->getPath())) {
+        if (!$asset->getVolume()->fileExists($asset->getPath())) {
             throw new Exception('File "' . $asset->getPath() . '" does no exist on volume.');
         }
 
