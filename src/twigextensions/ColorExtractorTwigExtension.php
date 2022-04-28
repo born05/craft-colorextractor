@@ -4,7 +4,6 @@ namespace born05\colorextractor\twigextensions;
 
 use born05\colorextractor\ColorExtractor;
 
-use Craft;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 

@@ -4,9 +4,7 @@ namespace born05\colorextractor\console\controllers;
 
 use born05\colorextractor\ColorExtractor;
 
-use Craft;
 use yii\console\Controller;
-use yii\helpers\Console;
 
 /**
  * Extracts colors from images.
