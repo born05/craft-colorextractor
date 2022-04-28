@@ -53,7 +53,7 @@ class AssetUpload extends Component
         
         $queue = Craft::$app->getQueue();
 
-        $jobId = $queue->push(
+        $queue->push(
             new ColorExtractorTaskJob([ 'assetIds' => $assetIds ])
         );
     }
