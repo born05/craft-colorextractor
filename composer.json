@@ -42,5 +42,11 @@
             "color": "born05\\colorextractor\\services\\Color"
         },
         "class": "born05\\colorextractor\\ColorExtractor"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
     }
 }
