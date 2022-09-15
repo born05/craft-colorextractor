@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0-beta.2 - 2022-09-15
+### Changed
+- Added allow-plugins to composer.json
+- Be more resilient to ColorThief exceptions thanks to @nstCactus
+
 ## 3.0.0-beta.1 - 2022-04-28
 ### Changed
 - Added craft 4 support
