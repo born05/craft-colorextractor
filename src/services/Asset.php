@@ -43,7 +43,13 @@ class Asset extends Component
 
         // Only Extract color when forced.
         if ($forceSave && isset($asset->imageColor)) {
-            $color = $this->extractColor($asset);
+            try {
+                $color = $this->extractColor($asset);
+            } catch (\Throwable $e) {
+                Craft::error("Couldn't extract the color of asset $asset->id");
+                Craft::error($e);
+                $color = null;
+            }
 
             if (!empty($color)) {
                 $asset->setFieldValue('imageColor', $color);
