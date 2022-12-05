@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.0.0 - 2022-12-05
+### Changed
+- Bump to 3.0.0
+- Drop craft 2 releases.json
+
 ## 3.0.0-beta.2 - 2022-09-15
 ### Changed
 - Added allow-plugins to composer.json
